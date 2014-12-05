@@ -1,24 +1,32 @@
+#include "Game.h"
+#include "Board.h"
+#include "AbstractPlayer.h"
+#include "Human.h"
+#include "Computer.h"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <vector>
 
-
-
-
-// Note that board is a 1D vector, displayed on 3 lines. NOT 2D.
-
-/*
-	instructions();
-
-	Human humanPlayer;
-	Computer computerPlayer;
-
-
-
-	while (play again == yes) 
-		game();
-
+int main(int argc, char const *argv[])
+{
+	
 
 	return 0;
-*/
+}
 
+
+
+
+
+
+
+
+
+
+
+/*
 main()
 {
 	// Buy a board, invite two players, and start a game
@@ -39,7 +47,7 @@ main()
 
 	return 0;
 }
-
+*/
 
 
 
