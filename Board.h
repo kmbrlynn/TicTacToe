@@ -6,7 +6,18 @@
 #include <algorithm>
 #include <vector>
 
+class Board
+{
+private:
+	vector<char> mSquares;
+public:
+	Board();
+	~Board();
 
+	void displayInstructions();
+	void displayBoard();
+
+};
 
 
 #endif

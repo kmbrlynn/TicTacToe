@@ -6,7 +6,17 @@
 #include <algorithm>
 #include <vector>
 
+class Game
+{
+private:
+	vector <AbstractPlayer> mPlayers;
+	Board mBoard;
+public:
+	Game();
+	~Game();
 
-
+	void setWinner();
+	char getWinner();
+};
 
 #endif

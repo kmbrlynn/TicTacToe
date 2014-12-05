@@ -6,6 +6,23 @@
 #include <algorithm>
 #include <vector>
 
+class Human : public AbstractPlayer
+{
+private:
+	// no redefined member vars
+public:
+	Human();
+	~Human();
+
+	// redefined
+	void setPiece();
+	int move();
+
+	// additional member fucntions
+	char setYesNo();
+	int setNumber();
+
+};
 
 
 

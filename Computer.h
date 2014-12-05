@@ -6,7 +6,19 @@
 #include <algorithm>
 #include <vector>
 
+class Computer : public AbstractPlayer
+{
+private:
+	// no redefined member vars
+public:
+	Computer();
+	~Computer();
 
+	// redefined
+	void setPiece();
+	int move();
+
+};
 
 
 #endif
