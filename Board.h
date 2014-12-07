@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <vector>
 
+using namespace std;
+
 class Board
 {
 private:
@@ -16,7 +18,6 @@ public:
 
 	void displayInstructions();
 	void displayBoard();
-
 };
 
 

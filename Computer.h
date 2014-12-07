@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <vector>
 
+using namespace std;
+
 class Computer : public AbstractPlayer
 {
 private:
@@ -15,8 +17,8 @@ public:
 	~Computer();
 
 	// redefined
-	void setPiece();
-	int move();
+	void setPiece(const Human &human);
+	int move(const Board &board);
 
 };
 

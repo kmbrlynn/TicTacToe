@@ -6,17 +6,25 @@
 #include <algorithm>
 #include <vector>
 
+using namespace std;
+
+class Board;
+class AbstractPlayer;
+class Human;
+class Computer;
+
 class Game
 {
 private:
-	vector <AbstractPlayer> mPlayers;
 	Board mBoard;
+	Human mHuman;
+	Computer mComputer;
 public:
 	Game();
 	~Game();
 
-	void setWinner();
-	char getWinner();
+	char winner(const Board &board);
+	void announceWinner(char winner, char computer, char human);
 };
 
 #endif

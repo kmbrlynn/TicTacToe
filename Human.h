@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <vector>
 
+using namespace std;
+
 class Human : public AbstractPlayer
 {
 private:
@@ -14,13 +16,14 @@ public:
 	Human();
 	~Human();
 
-	// redefined
-	void setPiece();
-	int move();
-
 	// additional member fucntions
-	char setYesNo();
+	char setYesNo(string question);
 	int setNumber();
+
+	// overridden from AbstractPlayer 
+	void setPiece();
+	int move(const Board &board);
+
 
 };
 
