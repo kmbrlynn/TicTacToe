@@ -1,28 +1,27 @@
 #include "Board.h"
+#include <vector>
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
 
-// ========================================= constructors & destructors
+const char EMPTY = ' ';
+
+// =================================================== constructors & destructors
 Board::Board()
 {
-	for(i = 0; i < 9; ++i)
+	for(int i = 0; i < 9; ++i)
 	{
-		mSquares.push_back(' ');
+		mSquares.push_back(EMPTY);
 	}
 }
 
 Board::~Board()
 {}
 
-// ========================================= member functions
+// =================================================== member functions
 void Board::displayInstructions()
 {
-    cout << "Welcome to the ultimate man-machine showdown: Tic-Tac-Toe.\n";
+    cout << "\nWelcome to the ultimate man-machine showdown: Tic-Tac-Toe.\n";
     cout << "--where human brain is pit against silicon processor\n\n";
 
     cout << "Make your move known by entering a number, 0 - 8.  The number\n";
@@ -41,11 +40,22 @@ void Board::displayBoard()
 {
 	vector<char>::iterator boardIter;
 	int i = 0;
-	for (boardIter = this.begin(); boardIter != this.end(); boardIter++)
+	for (boardIter = this->mSquares.begin(); boardIter != this->mSquares.end(); boardIter++)
 	{
-		if (i == 2 || i == 5)
+		if (i == 3 || i == 6)
 			cout << endl;
-		cout << *boardIter << "  ";
-		i++
+		cout << "| " << *boardIter << " |";
+		i++;
 	}
+}
+
+char Board::getSquare(int square)
+{
+	return mSquares[square];
+}
+
+bool Board::isLegal(int move)
+{
+	char desiredSquare = this->getSquare(move);
+    return (desiredSquare == EMPTY);
 }

@@ -1,35 +1,24 @@
 #include "AbstractPlayer.h"
+#include <vector>
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
 
-// ========================================= constructors & destructors
-AbstractPlayer::AbstractPlayer() : 
-	mName("Player"), 
-	mPiece('X')
-{}
+// =================================================== constructors & destructors
+AbstractPlayer::AbstractPlayer()
+{
+	m_Health = 100;
+	mPiece = ' ';
+//	mName = " ";
+}
 
-AbstractPlayer::AbstractPlayer(string name, char piece) : 
-	mName(name), 
+AbstractPlayer::AbstractPlayer(char piece) : 
 	mPiece(piece)
+	//mName(name)
 {}
 
-AbstractPlayer::~AbstractPlayer()
-{}
-
-// ========================================= non-abstract member functions
-// do not define setPiece() and move() -- they are abstract
-bool AbstractPlayer::isLegal(int move, const Board &board)
-{
-    return (board[move] == EMPTY);
+// =================================================== member functions   
+void AbstractPlayer::DisplayHealth()
+{ 
+	cout << "AbstractPlayer's health: " << m_Health << endl; 
 }
-
-char AbstractPlayer::getPeice()
-{
-	return mPiece;
-}
-

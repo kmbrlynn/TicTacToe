@@ -1,28 +1,32 @@
-#ifndef AbstractPlayer_H
-#define AbstractPlayer_H
+#ifndef AbstractPlayer_h
+#define AbstractPlayer_h
+#include "Board.h"
+#include <vector>
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
 
-class AbstractPlayer
+class AbstractPlayer  //abstract class
 {
 protected:
-	string mName;	
-	char mPiece;
+    int m_Health;
+   
+    char mPiece;
+   // string mName;
+
 public:
 	AbstractPlayer();
-	AbstractPlayer(string name, char piece);
-	~AbstractPlayer();
+    AbstractPlayer(char piece);
+    
+    virtual int move(const Board &board) = 0;
 
-	bool isLegal(int move, const Board &board);
-	char getPiece();
-	virtual void setPiece() = 0; // pure virtual. will be overridden
-	virtual int move() = 0;
+
+
+
+
+    virtual void Greet() = 0;
+
+    void DisplayHealth();
 };
-
 
 #endif

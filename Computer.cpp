@@ -1,37 +1,31 @@
 #include "AbstractPlayer.h"
 #include "Computer.h"
+#include "Board.h"
+#include <vector>
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
 
-// ========================================= constructors & destructors
-Computer::Computer() : 
-	mName("Computer"), 
-	mPiece('O')
-{}
-
-Computer::Computer(string name, char piece) : 
-	mName(name), 
-	mPiece(piece)
-{}
-
-Computer::~Computer()
-{}
-
-// ========================================= overridden member functions
-void Computer::setPiece(const Human &human)
+// =================================================== constructors & destructors
+Computer::Computer()
 {
-	if (human.mPiece == X)
-		mPiece = O;
-	else if (human.mPiece == O)
-		mPiece = X;
+	m_Health = 200;
+	mPiece = 'O';
+	//mName = "Computer";
 }
 
-int Computer::move(const Board &board)
-{
+Computer::Computer(char piece) : 
+	AbstractPlayer(piece)
+{}
 
+// =================================================== member functions
+int Computer::move(const Board& board)
+{
+	return 1;
+}
+
+
+void Computer::Greet() 
+{ 
+	cout << "The Computer smiles and says hi:)\n";
 }

@@ -1,32 +1,23 @@
-#ifndef Human_H
-#define Human_H
+#ifndef Human_h
+#define Human_h
+#include "AbstractPlayer.h"
+#include "Board.h"
+#include <vector>
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
 
 class Human : public AbstractPlayer
 {
 private:
-	// no redefined member vars
+	// no redefined vars
 public:
 	Human();
-	~Human();
+    Human(char piece);
 
-	// additional member fucntions
-	char setYesNo(string question);
-	int setNumber();
+    virtual int move(const Board& board);
 
-	// overridden from AbstractPlayer 
-	void setPiece();
-	int move(const Board &board);
-
-
+    void Greet(); 
 };
-
-
 
 #endif

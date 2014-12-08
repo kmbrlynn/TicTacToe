@@ -9,8 +9,8 @@ TicTacToe: TicTacToe.o Game.o Board.o AbstractPlayer.o Human.o Computer.o
 	$(CC) $(FLAGS) -o TicTacToe TicTacToe.o Game.o Board.o AbstractPlayer.o Human.o Computer.o
 
 # compile source files into object files
-Game.o: Game.cpp Game.h Board.h AbstractPlayer.h Human.h Computer.h
-	$(CC) $(FLAGS) -c Game.cpp 
+Game.o: Game.cpp AbstractPlayer.h Human.h Computer.h
+	$(CC) $(FLAGS) -c Game.cpp
 
 Board.o: Board.cpp Board.h
 	$(CC) $(FLAGS) -c Board.cpp

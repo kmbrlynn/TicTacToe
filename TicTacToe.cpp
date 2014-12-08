@@ -3,27 +3,27 @@
 #include "AbstractPlayer.h"
 #include "Human.h"
 #include "Computer.h"
+#include <vector>
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
 
-// global constants
-const char X = 'X';
-const char O = 'O';
-const char EMPTY = ' ';
-const char TIE = 'T';
-const char NO_ONE = 'N';
-
 int main(int argc, char const *argv[])
 {
-	
+	Game ourGame;
+	Board ourBoard = ourGame.getBoard();
+	vector<AbstractPlayer*> ourPlayers = ourGame.getPlayers();
 
+	ourBoard.displayInstructions();
+	ourBoard.displayBoard();
+
+
+	/* code */
 	return 0;
 }
+
+
+
 
 
 
@@ -36,40 +36,29 @@ int main(int argc, char const *argv[])
 
 
 /*
-main()
+int main()
 {
-	// Buy a board, invite two players, and start a game
-	//Board board;	
-	//Human human;	
-	//Computer comp;	
-	Game game;		
 
-	// Board supplies instructions
-	board.displayInstructions();
-	// Human chooses to be x or o
-	human.setPiece();
-	// Computer chooses to be x or o
-	comp.setPiece();
 
-	// Play the game
-	game.play();
+	vector<Creature*> creatures;
+    
 
-	return 0;
+    Creature* pCreature = new Orc();
+    pCreature->Greet();
+	creatures.push_back(pCreature);
+
+    pCreature = new Hobbit();
+    pCreature->Greet();
+	creatures.push_back(pCreature);
+    cout<<endl;
+
+	cout <<"Going over the creatures in a vector: "<<endl;
+    for (unsigned int i=0;i<creatures.size();i++) 
+	{
+		creatures[i]->Greet();
+		creatures[i]->DisplayHealth();
+	}
+
+    return 0;
 }
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

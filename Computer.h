@@ -1,26 +1,23 @@
-#ifndef Computer_H
-#define Computer_H
+#ifndef Computer_h
+#define Computer_h
+#include "AbstractPlayer.h"
+#include "Board.h"
+#include <vector>
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
 
 class Computer : public AbstractPlayer
 {
 private:
-	// no redefined member vars
+	// no redefined vars
 public:
 	Computer();
-	~Computer();
+    Computer(char piece);
 
-	// redefined
-	void setPiece(const Human &human);
-	int move(const Board &board);
+    virtual int move(const Board& board);
 
+    void Greet(); 
 };
-
 
 #endif

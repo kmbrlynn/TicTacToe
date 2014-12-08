@@ -1,30 +1,24 @@
-#ifndef Game_H
-#define Game_H
+#ifndef Game_h
+#define Game_h
+#include "AbstractPlayer.h"
+#include "Board.h"
+#include <vector>
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <vector>
 
 using namespace std;
-
-class Board;
-class AbstractPlayer;
-class Human;
-class Computer;
 
 class Game
 {
 private:
-	Board mBoard;
-	Human mHuman;
-	Computer mComputer;
+	vector<AbstractPlayer*> players;
+	Board board;
+
 public:
 	Game();
 	~Game();
 
-	char winner(const Board &board);
-	void announceWinner(char winner, char computer, char human);
+	vector<AbstractPlayer*>& getPlayers();
+	Board& getBoard();
 };
 
 #endif
