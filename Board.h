@@ -17,8 +17,10 @@ public:
 	void displayInstructions();
 	void displayBoard();
 
-	char getSquare(int square);
-	bool isLegal(int move);
+	void setSquare(int move, char piece);
+
+	char getSquare(int square) const;
+	bool isLegal(int move) const;
 };
 
 #endif

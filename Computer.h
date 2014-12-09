@@ -15,7 +15,10 @@ public:
 	Computer();
     Computer(char piece);
 
+    char opposingPiece(char piece);
+
     virtual int move(const Board& board);
+
 
     void Greet(); 
 };

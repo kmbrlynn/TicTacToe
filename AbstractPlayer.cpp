@@ -18,6 +18,13 @@ AbstractPlayer::AbstractPlayer(char piece) :
 {}
 
 // =================================================== member functions   
+
+char AbstractPlayer::getPiece()
+{
+	return mPiece;
+}
+
+
 void AbstractPlayer::DisplayHealth()
 { 
 	cout << "AbstractPlayer's health: " << m_Health << endl; 

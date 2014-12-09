@@ -38,23 +38,25 @@ void Board::displayInstructions()
 
 void Board::displayBoard()
 {
-	vector<char>::iterator boardIter;
-	int i = 0;
-	for (boardIter = this->mSquares.begin(); boardIter != this->mSquares.end(); boardIter++)
-	{
-		if (i == 3 || i == 6)
-			cout << endl;
-		cout << "| " << *boardIter << " |";
-		i++;
-	}
+    cout << "\n\t" << mSquares[0] << " | " << mSquares[1] << " | " << mSquares[2];
+    cout << "\n\t" << "---------";
+    cout << "\n\t" << mSquares[3] << " | " << mSquares[4] << " | " << mSquares[5];
+    cout << "\n\t" << "---------";
+    cout << "\n\t" << mSquares[6] << " | " << mSquares[7] << " | " << mSquares[8];
+    cout << "\n\n";
 }
 
-char Board::getSquare(int square)
+void Board::setSquare(int move, char piece)
+{
+	mSquares[move] = piece;
+}
+
+char Board::getSquare(int square) const
 {
 	return mSquares[square];
 }
 
-bool Board::isLegal(int move)
+bool Board::isLegal(int move) const
 {
 	char desiredSquare = this->getSquare(move);
     return (desiredSquare == EMPTY);

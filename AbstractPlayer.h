@@ -19,6 +19,7 @@ public:
     AbstractPlayer(char piece);
     
     virtual int move(const Board &board) = 0;
+    virtual char getPiece();
 
 
 

@@ -10,13 +10,45 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+	// set up a game
 	Game ourGame;
 	Board ourBoard = ourGame.getBoard();
 	vector<AbstractPlayer*> ourPlayers = ourGame.getPlayers();
 
+	// invite some players to our game
+	Human Kim;
+	Computer robot;
+	ourPlayers[0] = &Kim;
+	ourPlayers[1] = &robot;
+	char turn = 'X';
+	int move;
+
+	// Welcome to Tic-Tac-Toe!!
 	ourBoard.displayInstructions();
+	Kim.choosePiece();
+	robot.opposingPiece(Kim.getPiece());
+
+//	cout << "\nThe board looks as follows: \n"
 	ourBoard.displayBoard();
 
+	while(1)
+	{
+		if (turn == Kim.getPiece())
+		{
+		    move = Kim.move(ourBoard);
+    		ourBoard.setSquare(move, Kim.getPiece());
+		    turn = robot.getPiece();
+		}
+		else
+		{
+		    move = robot.move(ourBoard);
+		    ourBoard.setSquare(move, robot.getPiece());
+		    turn = Kim.getPiece();
+		}
+
+		ourBoard.displayBoard();
+
+	}
 
 	/* code */
 	return 0;

@@ -15,7 +15,12 @@ public:
 	Human();
     Human(char piece);
 
+    char askYesNo(string question);
+    int askNumber(string question);
+    char choosePiece();
+
     virtual int move(const Board& board);
+
 
     void Greet(); 
 };

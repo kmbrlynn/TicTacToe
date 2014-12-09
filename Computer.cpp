@@ -19,10 +19,29 @@ Computer::Computer(char piece) :
 {}
 
 // =================================================== member functions
+char Computer::opposingPiece(char piece)
+{
+	if (piece == 'X')
+	{
+		mPiece = 'O';
+		return 'O';	
+	}
+	else if (piece == 'O')
+	{
+		mPiece = 'X';
+		return 'X';
+	}
+}
+
 int Computer::move(const Board& board)
 {
 	return 1;
 }
+
+
+
+
+
 
 
 void Computer::Greet() 
