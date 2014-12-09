@@ -20,7 +20,7 @@ public:
 	vector<AbstractPlayer*>& getPlayers();
 	Board& getBoard();
 
-	char winner(const Board& board);
+
 
 };
 

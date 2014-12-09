@@ -21,7 +21,7 @@ public:
     virtual int move(const Board &board) = 0;
     virtual char getPiece();
 
-
+	virtual char winner(const Board& board);
 
 
 
