@@ -19,6 +19,8 @@ public:
 
 	vector<AbstractPlayer*>& getPlayers();
 	Board& getBoard();
+
+	void announceWinner(char winner, char computer, char human);
 };
 
 #endif

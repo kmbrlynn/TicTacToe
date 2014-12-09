@@ -28,10 +28,8 @@ int main(int argc, char const *argv[])
 	Kim.choosePiece();
 	robot.opposingPiece(Kim.getPiece());
 
-//	cout << "\nThe board looks as follows: \n"
-	ourBoard.displayBoard();
-
-	while(1)
+	// Play!
+	while(robot.winner(ourBoard) == 'N')
 	{
 		if (turn == Kim.getPiece())
 		{
@@ -50,7 +48,8 @@ int main(int argc, char const *argv[])
 
 	}
 
-	/* code */
+	ourGame.announceWinner(robot.winner(ourBoard), robot.getPiece(), Kim.getPiece());
+
 	return 0;
 }
 
@@ -65,32 +64,3 @@ int main(int argc, char const *argv[])
 
 
 
-
-
-/*
-int main()
-{
-
-
-	vector<Creature*> creatures;
-    
-
-    Creature* pCreature = new Orc();
-    pCreature->Greet();
-	creatures.push_back(pCreature);
-
-    pCreature = new Hobbit();
-    pCreature->Greet();
-	creatures.push_back(pCreature);
-    cout<<endl;
-
-	cout <<"Going over the creatures in a vector: "<<endl;
-    for (unsigned int i=0;i<creatures.size();i++) 
-	{
-		creatures[i]->Greet();
-		creatures[i]->DisplayHealth();
-	}
-
-    return 0;
-}
-*/
