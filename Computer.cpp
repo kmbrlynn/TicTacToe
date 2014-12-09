@@ -1,6 +1,6 @@
-#include "AbstractPlayer.h"
+//#include "AbstractPlayer.h"
 #include "Computer.h"
-#include "Board.h"
+//#include "Board.h"
 #include <vector>
 #include <iostream>
 
@@ -18,6 +18,9 @@ Computer::Computer(char piece) :
 	AbstractPlayer(piece)
 {}
 
+Computer::~Computer()
+{}
+
 // =================================================== member functions
 char Computer::opposingPiece(char piece)
 {
@@ -33,7 +36,7 @@ char Computer::opposingPiece(char piece)
 	}
 }
 
-int Computer::move(const Board& board)
+int Computer::move(Board& board)
 {
 	char computerPiece = mPiece;
 	char humanPiece;
@@ -90,13 +93,3 @@ int Computer::move(const Board& board)
     }
 }
 
-
-
-
-
-
-
-void Computer::Greet() 
-{ 
-	cout << "The Computer smiles and says hi:)\n";
-}

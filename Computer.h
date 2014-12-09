@@ -1,7 +1,7 @@
 #ifndef Computer_h
 #define Computer_h
 #include "AbstractPlayer.h"
-#include "Board.h"
+//#include "Board.h"
 #include <vector>
 #include <iostream>
 
@@ -14,13 +14,12 @@ private:
 public:
 	Computer();
     Computer(char piece);
+    ~Computer();
 
     char opposingPiece(char piece);
 
-    virtual int move(const Board& board);
+    virtual int move(Board& board);
 
-
-    void Greet(); 
 };
 
 #endif

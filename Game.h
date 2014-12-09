@@ -1,7 +1,7 @@
 #ifndef Game_h
 #define Game_h
 #include "AbstractPlayer.h"
-#include "Board.h"
+//#include "Board.h" included in AbstractPlayer 
 #include <vector>
 #include <iostream>
 
@@ -19,9 +19,6 @@ public:
 
 	vector<AbstractPlayer*>& getPlayers();
 	Board& getBoard();
-
-
-
 };
 
 #endif

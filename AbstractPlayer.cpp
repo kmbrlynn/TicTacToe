@@ -1,4 +1,5 @@
 #include "AbstractPlayer.h"
+//#include "Board.h"
 #include <vector>
 #include <iostream>
 
@@ -57,11 +58,4 @@ char AbstractPlayer::winner(const Board& board)
     }
 
     return 'T'; //tie -- nobody won and there's no empty squares left
-}
-
-
-
-void AbstractPlayer::DisplayHealth()
-{ 
-	cout << "AbstractPlayer's health: " << m_Health << endl; 
 }

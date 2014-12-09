@@ -1,6 +1,6 @@
 #include "Game.h"
-#include "Board.h"
-#include "AbstractPlayer.h"
+//#include "Board.h"
+//#include "AbstractPlayer.h"
 #include "Human.h"
 #include "Computer.h"
 #include <vector>

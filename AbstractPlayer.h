@@ -18,16 +18,11 @@ public:
 	AbstractPlayer();
     AbstractPlayer(char piece);
     
-    virtual int move(const Board &board) = 0;
+    virtual int move(Board &board) = 0;
     virtual char getPiece();
 
-	virtual char winner(const Board& board);
+	char winner(const Board& board);
 
-
-
-    virtual void Greet() = 0;
-
-    void DisplayHealth();
 };
 
 #endif

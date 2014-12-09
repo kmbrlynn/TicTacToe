@@ -1,6 +1,6 @@
-#include "AbstractPlayer.h"
+//#include "AbstractPlayer.h"
 #include "Human.h"
-#include "Board.h"
+//#include "Board.h"
 #include <vector>
 #include <iostream>
 
@@ -15,6 +15,9 @@ Human::Human()
 
 Human::Human(char piece) : 
 	AbstractPlayer(piece)
+{}
+
+Human::~Human()
 {}
 
 // =================================================== member functions
@@ -42,7 +45,7 @@ int Human::askNumber(string question)
     return number;
 }
 
-int Human::move(const Board& board)
+int Human::move(Board& board)
 {
     int move = askNumber("Where will you move?");
     while (!board.isLegal(move))
@@ -72,14 +75,3 @@ char Human::choosePiece()
 }
 
 
-
-
-
-
-
-
-
-void Human::Greet() 
-{ 
-	cout << "The Human grunts hello:( \n";
-}
