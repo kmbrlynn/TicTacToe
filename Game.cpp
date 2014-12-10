@@ -60,7 +60,32 @@ void Game::announceWinner(char winner, char computer, char human)
 
 void Game::play()
 {
+	char turn = 'X';
+	int move;
 
+	players[0]->choosePiece(players[1]->getPiece());
+	players[1]->choosePiece(players[0]->getPiece());
+
+	while(players[1]->winner(board) == 'N')
+	{
+		if (turn == players[0]->getPiece())
+		{
+		    move = players[0]->move(board);
+    		board.setSquare(move, players[0]->getPiece());
+		    turn = players[1]->getPiece();
+		}
+		else
+		{
+		    move = players[1]->move(board);
+		    board.setSquare(move, players[1]->getPiece());
+		    turn = players[0]->getPiece();
+		}
+
+		board.displayBoard();
+
+	}
+
+	this->announceWinner(players[1]->winner(board), players[1]->getPiece(), players[0]->getPiece());
 }
 
 

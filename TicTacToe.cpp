@@ -24,30 +24,10 @@ int main(int argc, char const *argv[])
 	// Welcome to Tic-Tac-Toe!!
 	ourBoard.displayInstructions();
 
-	Kim.choosePiece(robot.getPiece());
-	robot.choosePiece(Kim.getPiece());
-
 	// Play!
-	while(robot.winner(ourBoard) == 'N')
-	{
-		if (turn == Kim.getPiece())
-		{
-		    move = Kim.move(ourBoard);
-    		ourBoard.setSquare(move, Kim.getPiece());
-		    turn = robot.getPiece();
-		}
-		else
-		{
-		    move = robot.move(ourBoard);
-		    ourBoard.setSquare(move, robot.getPiece());
-		    turn = Kim.getPiece();
-		}
 
-		ourBoard.displayBoard();
+	ourGame.play();
 
-	}
-
-	ourGame.announceWinner(robot.winner(ourBoard), robot.getPiece(), Kim.getPiece());
 
 	return 0;
 }
