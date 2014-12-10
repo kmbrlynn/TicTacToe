@@ -6,7 +6,8 @@
 
 using namespace std;
 
-// make exception classes, since human input involves validation
+// make exception classes, 
+//since human input involves validation
 class notYesNo
 {};
 

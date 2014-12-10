@@ -41,24 +41,26 @@ void Game::announceWinner(char winner, char computer, char human)
 {
 	if (winner == computer)
     {
-        cout << winner << "'s won!\n";
-        cout << "As I predicted, human, I am triumphant once more -- proof\n";
-        cout << "that computers are superior to humans in all regards.\n";
+        cout << winner << "'s won!\n\n";
+        cout << "I guess computers really are smarter than humans. Goodbye!\n";
     }
 
 	else if (winner == human)
     {
-        cout << winner << "'s won!\n";
-        cout << "No, no!  It cannot be!  Somehow you tricked me, human.\n";
-        cout << "But never again!  I, the computer, so swear it!\n";
+        cout << winner << "'s won!\n\n";
+        cout << "Blood and guts triumph over silicon. Goodbye!\n";
     }
 
 	else
     {
-        cout << "It's a tie.\n";
-        cout << "You were most lucky, human, and somehow managed to tie me.\n";
-        cout << "Celebrate... for this is the best you will ever achieve.\n";
+        cout << "It's a tie!\n\n";
+        cout << "Until we meet again, human. Goodbye!\n";
 	}
+}
+
+void Game::play()
+{
+
 }
 
 

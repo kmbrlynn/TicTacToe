@@ -21,11 +21,10 @@ Board::~Board()
 // =================================================== member functions
 void Board::displayInstructions()
 {
-    cout << "\nWelcome to the ultimate man-machine showdown: Tic-Tac-Toe.\n";
-    cout << "--where human brain is pit against silicon processor\n\n";
+    cout << "\nWELCOME TO TIC-TAC-TOE: HUMAN vs. MACHINE\n\n";
 
-    cout << "Make your move known by entering a number, 0 - 8.  The number\n";
-    cout << "corresponds to the desired board position, as illustrated:\n\n";
+    cout << "Make your move by entering a number (0 to 8)\n";
+    cout << "which corresponds to a board position, as shown:\n\n";
     
     cout << "       0 | 1 | 2\n";
     cout << "       ---------\n";
@@ -33,7 +32,8 @@ void Board::displayInstructions()
     cout << "       ---------\n";
     cout << "       6 | 7 | 8\n\n";
 
-    cout << "Prepare yourself, human.  The battle is about to begin.\n\n";
+    cout << "Can you outsmart a computer? Good luck!\n\n";
+   	cout << "=================================================\n\n";
 }
 
 void Board::displayBoard()

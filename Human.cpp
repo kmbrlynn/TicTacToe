@@ -95,7 +95,7 @@ int Human::askNumber(string question)
 		}
 		catch (outOfRange e)
 		{
-			cout << "The number must be between 0 and 8.  Try again.\n";
+			cout << "The number must be between 0 and 8. Try again.\n";
 		}
 	}
 
@@ -104,29 +104,29 @@ int Human::askNumber(string question)
 
 int Human::move(Board& board)
 {
-    int move = askNumber("Where will you move?");
+    int move = askNumber("Where will you move? ");
     while (!board.isLegal(move))
     {
-        cout << "\nThat square is already occupied, foolish human.\n";
+        cout << "\nNope, that square is already occupied!\n";
         move = askNumber("Where will you move?");
     }
-    cout << "Fine...\n";
+    cout << "\nAlright. Now the board looks like this:\n";
     return move;
 }
 
 char Human::choosePiece(char piece)
 {
-    char go_first = askYesNo("Do you require the first move?");
+    char go_first = askYesNo("Do you want to go first?");
     if (go_first == 'y')
     {
-        cout << "\nThen take the first move.  You will need it.\n";
+        cout << "\nOkay. You are X's.\n";
         mPiece = 'X';
 
         return 'X';
     }
     else
     {
-        cout << "\nYour bravery will be your undoing... I will go first.\n";
+        cout << "\nOkay then, I'll be X's and go first.\n";
         mPiece = 'O';
         return 'O';
     }

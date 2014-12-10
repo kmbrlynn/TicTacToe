@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class AbstractPlayer  //abstract class
+class AbstractPlayer  
 {
 protected:
     char mPiece;

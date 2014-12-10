@@ -1,6 +1,5 @@
-//#include "AbstractPlayer.h"
 #include "Computer.h"
-//#include "Board.h"
+#include <unistd.h> // small delay before computer's turn displays
 #include <vector>
 #include <iostream>
 
@@ -38,12 +37,15 @@ int Computer::move(Board& board)
 {
 	char computerPiece = mPiece;
 	char humanPiece;
+	clock_t pause;
+
 	if(mPiece == 'X')
 		humanPiece = 'O';
 	if(mPiece == 'O')
 		humanPiece = 'X';
 
-    cout << "I shall take square number ";
+	sleep(2);
+	cout<< "I'll take square number ";
     
     // if computer can win on next move, make that move
     for(int move = 0; move < 8; ++move)
@@ -53,7 +55,7 @@ int Computer::move(Board& board)
             board.setSquare(move, computerPiece);
             if (winner(board) == computerPiece)
             {
-                cout << move << endl;
+                cout << move << "! \nThe board now looks like this:\n";
                 return move;
             }
             // done checking this move, undo it
@@ -69,7 +71,7 @@ int Computer::move(Board& board)
             board.setSquare(move, humanPiece);
             if (winner(board) == humanPiece)
             {
-                cout << move << endl;
+                cout << move << "! \nThe board now looks like this:\n";
                 return move;
             }
             // done checking this move, undo it
@@ -85,7 +87,7 @@ int Computer::move(Board& board)
         int move = BEST_MOVES[i];
         if (board.isLegal(move))
         {
-            cout << move << endl;
+            cout << move << "! \nThe board now looks like this:\n";
             return move;
         }
     }
