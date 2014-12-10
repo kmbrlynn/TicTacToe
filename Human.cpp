@@ -1,7 +1,6 @@
 #include "Human.h"
 #include <cstdlib> //atoi
 #include <vector>
-#include <cstring>
 #include <string>
 #include <iostream>
 
@@ -22,8 +21,7 @@ bool isAllDigits(const string s)
 // =================================================== constructors & destructors
 Human::Human()
 {
-	m_Health = 120;
-	mPiece = 'X';
+	mPiece = ' ';
 }
 
 Human::Human(char piece) : 
@@ -116,13 +114,14 @@ int Human::move(Board& board)
     return move;
 }
 
-char Human::choosePiece()
+char Human::choosePiece(char piece)
 {
     char go_first = askYesNo("Do you require the first move?");
     if (go_first == 'y')
     {
         cout << "\nThen take the first move.  You will need it.\n";
         mPiece = 'X';
+
         return 'X';
     }
     else

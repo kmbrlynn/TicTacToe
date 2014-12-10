@@ -1,7 +1,5 @@
-#include "Game.h"
-#include "Board.h"
-#include "AbstractPlayer.h"
-#include "Human.h"
+#include "Game.h" // includes Board
+#include "Human.h" // includes AbstractPlayer
 #include "Computer.h"
 #include <vector>
 #include <iostream>
@@ -25,8 +23,9 @@ int main(int argc, char const *argv[])
 
 	// Welcome to Tic-Tac-Toe!!
 	ourBoard.displayInstructions();
-	Kim.choosePiece();
-	robot.opposingPiece(Kim.getPiece());
+
+	Kim.choosePiece(robot.getPiece());
+	robot.choosePiece(Kim.getPiece());
 
 	// Play!
 	while(robot.winner(ourBoard) == 'N')

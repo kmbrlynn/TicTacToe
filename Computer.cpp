@@ -9,9 +9,7 @@ using namespace std;
 // =================================================== constructors & destructors
 Computer::Computer()
 {
-	m_Health = 200;
-	mPiece = 'O';
-	//mName = "Computer";
+	mPiece = ' ';
 }
 
 Computer::Computer(char piece) : 
@@ -22,14 +20,14 @@ Computer::~Computer()
 {}
 
 // =================================================== member functions
-char Computer::opposingPiece(char piece)
+char Computer::choosePiece(char piece)
 {
 	if (piece == 'X')
 	{
 		mPiece = 'O';
 		return 'O';	
 	}
-	else if (piece == 'O')
+	else
 	{
 		mPiece = 'X';
 		return 'X';

@@ -8,14 +8,11 @@ using namespace std;
 // =================================================== constructors & destructors
 AbstractPlayer::AbstractPlayer()
 {
-	m_Health = 100;
 	mPiece = ' ';
-//	mName = " ";
 }
 
 AbstractPlayer::AbstractPlayer(char piece) : 
 	mPiece(piece)
-	//mName(name)
 {}
 
 // =================================================== member functions   

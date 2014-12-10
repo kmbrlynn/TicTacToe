@@ -9,18 +9,16 @@ using namespace std;
 class AbstractPlayer  //abstract class
 {
 protected:
-    int m_Health;
-   
     char mPiece;
-   // string mName;
 
 public:
 	AbstractPlayer();
     AbstractPlayer(char piece);
     
     virtual int move(Board &board) = 0;
-    virtual char getPiece();
-
+    virtual char choosePiece(char piece) = 0;
+    
+    char getPiece();
 	char winner(const Board& board);
 
 };

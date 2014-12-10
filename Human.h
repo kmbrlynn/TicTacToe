@@ -1,7 +1,6 @@
 #ifndef Human_h
 #define Human_h
 #include "AbstractPlayer.h"
-//#include "Board.h"
 #include <vector>
 #include <iostream>
 
@@ -26,11 +25,11 @@ public:
     Human(char piece);
     ~Human();
 
+    virtual int move(Board& board);
+    virtual char choosePiece(char piece);
+
     char askYesNo(string question);
     int askNumber(string question);
-    char choosePiece();
-
-    virtual int move(Board& board);
 
 };
 
