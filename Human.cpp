@@ -1,10 +1,23 @@
-//#include "AbstractPlayer.h"
 #include "Human.h"
-//#include "Board.h"
+#include <cstdlib> //atoi
 #include <vector>
+#include <cstring>
+#include <string>
 #include <iostream>
 
 using namespace std;
+
+// for exception handling
+bool isAllDigits(const string s)
+{
+	int i;
+	for (i=0; i<s.length(); i++)
+	{
+		char c = s[i];
+		if (!isdigit(c)) return false;
+	}
+	return true;
+}
 
 // =================================================== constructors & destructors
 Human::Human()
@@ -23,26 +36,72 @@ Human::~Human()
 // =================================================== member functions
 char Human::askYesNo(string question)
 {
-    char response;
-    do
-    {
-        cout << question << " (y/n): ";
-        cin >> response;
-    } while (response != 'y' && response != 'n');
+    string response;
+    char temp;
+    bool validAnswer = false;
 
-    return response;
+    while(validAnswer == false)
+    {
+	    try
+	    {
+	        cout << question << " (y/n): ";
+	        getline(cin,response);
+
+	        if (response != "y" && response != "n")
+				throw notYesNo();
+			
+			// no exception thrown, we can break out of loop
+			validAnswer = true;
+	    } 
+	    catch (notYesNo e)
+	    {
+		    cout << "\nPlease only enter 'y' or 'n'\n";
+	    }
+	}
+
+	temp = response[0];
+	
+	return temp;
 }
 
 int Human::askNumber(string question)
 {
-    int number;
-    do
-    {
-        cout << question << "(0 to 8): ";
-        cin >> number;
-    } while (number > 8 || number < 0);
+    string response; // take response as a string, since it could be anything
+    bool validAnswer = false;
+    int temp;
 
-    return number;
+    while(validAnswer == false)
+    {
+	    try
+	    {
+	        cout << question << "(0 to 8): ";
+	        cin >> response;
+
+	       	if (!isAllDigits(response))
+			{
+			  throw notDigit();
+			}
+
+			temp = atoi(response.c_str());	// Convert string to an integer
+			if (temp < 0 || temp > 8)
+			{
+				throw outOfRange();
+			}
+
+			// no exception thrown, we can break out of loop
+			validAnswer = true;
+	    } 
+		catch (notDigit e)
+		{
+			cout << "Please enter your text using digits only. Try again.\n";
+		}
+		catch (outOfRange e)
+		{
+			cout << "The number must be between 0 and 8.  Try again.\n";
+		}
+	}
+
+    return temp; 
 }
 
 int Human::move(Board& board)

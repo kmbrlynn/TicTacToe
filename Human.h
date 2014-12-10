@@ -7,6 +7,16 @@
 
 using namespace std;
 
+// make exception classes, since human input involves validation
+class notYesNo
+{};
+
+class notDigit
+{};
+
+class outOfRange
+{};
+
 class Human : public AbstractPlayer
 {
 private:
