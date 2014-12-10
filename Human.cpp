@@ -44,6 +44,8 @@ char Human::askYesNo(string question)
 	    {
 	        cout << question << " (y/n): ";
 	        getline(cin,response);
+	      //  cin.clear();
+	      //  cin.ignore();
 
 	        if (response != "y" && response != "n")
 				throw notYesNo();

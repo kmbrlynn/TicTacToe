@@ -14,7 +14,6 @@ public:
 	Board();
 	~Board();
 
-	void displayInstructions();
 	void displayBoard();
 
 	void setSquare(int move, char piece);

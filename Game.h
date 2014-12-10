@@ -6,6 +6,9 @@
 
 using namespace std;
 
+// no particular class
+void displayInstructions();
+
 class Game
 {
 private:

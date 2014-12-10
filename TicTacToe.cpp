@@ -8,26 +8,23 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	// set up a game
-	Game ourGame;
-	Board ourBoard = ourGame.getBoard();
-	vector<AbstractPlayer*> ourPlayers = ourGame.getPlayers();
-
-	// invite some players to our game
+	// Look! a human! Maybe she wants to play a game.
 	Human Kim;
-	Computer robot;
-	ourPlayers[0] = &Kim;
-	ourPlayers[1] = &robot;
-	char turn = 'X';
-	int move;
 
-	// Welcome to Tic-Tac-Toe!!
-	ourBoard.displayInstructions();
+	// Welcome, human, to Tic-Tac-Toe!!
+	displayInstructions();
 
-	// Play!
+	do
+	{
+		// set up a game
+		Game ourGame;
+		vector<AbstractPlayer*> ourPlayers = ourGame.getPlayers();
 
-	ourGame.play();
-
+		// Kim the human pulls up a chair to play
+		ourPlayers[0] = &Kim;
+		ourGame.play();
+	}
+	while(Kim.askYesNo("Do you want to play again?") == 'y');
 
 	return 0;
 }

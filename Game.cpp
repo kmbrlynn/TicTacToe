@@ -6,6 +6,24 @@
 
 using namespace std;
 
+// lone function
+void displayInstructions()
+{
+    cout << "\nWELCOME TO TIC-TAC-TOE: HUMAN vs. MACHINE\n\n";
+
+    cout << "Make your move by entering a number (0 to 8)\n";
+    cout << "which corresponds to a board position, as shown:\n\n";
+    
+    cout << "       0 | 1 | 2\n";
+    cout << "       ---------\n";
+    cout << "       3 | 4 | 5\n";
+    cout << "       ---------\n";
+    cout << "       6 | 7 | 8\n\n";
+
+    cout << "Can you outsmart a computer? Good luck!\n\n";
+   	cout << "=================================================\n\n";
+}
+
 // =================================================== constructors & destructors
 Game::Game()
 {
