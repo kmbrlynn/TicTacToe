@@ -50,11 +50,6 @@ vector<AbstractPlayer*>& Game::getPlayers()
 	return players;
 }
 
-Board& Game::getBoard()
-{
-	return board;
-}
-
 void Game::announceWinner(char winner, char computer, char human)
 {
 	if (winner == computer)

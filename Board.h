@@ -15,7 +15,6 @@ public:
 	~Board();
 
 	void displayBoard();
-
 	void setSquare(int move, char piece);
 
 	char getSquare(int square) const;

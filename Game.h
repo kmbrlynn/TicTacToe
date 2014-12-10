@@ -20,7 +20,6 @@ public:
 	~Game();
 
 	vector<AbstractPlayer*>& getPlayers();
-	Board& getBoard();
 
 	void play();
 	void announceWinner(char winner, char computer, char human);
